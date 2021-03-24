@@ -168,7 +168,7 @@ class OldMaidGame(CardGame):
         matches = self.remove_all_matches()
         print("---------- Matches discarded, play begins")
         self.print_hands()
-
+        
         # Play until all 50 cards are matched
         turn = 0
         num_hands = len(self.hands)
@@ -179,6 +179,10 @@ class OldMaidGame(CardGame):
         print("---------- Game is Over")
         self.print_hands()
         
+    def print_hands(self):
+        for name in self.hands:
+            print(name)
+    
     def remove_all_matches(self):
         count = 0
         for hand in self.hands:
