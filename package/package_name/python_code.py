@@ -67,3 +67,12 @@ class Deck:
         for i in range(len(self.cards)):
             s = s + " " * i + str(self.cards[i]) + "\n"
         return s
+    
+    # shuffles the deck
+    def shuffle(self):
+        import random
+        rng = random.Random()        # Create a random generator
+        num_cards = len(self.cards)
+        for i in range(num_cards):
+            j = rng.randrange(i, num_cards)
+            (self.cards[i], self.cards[j]) = (self.cards[j], self.cards[i])
