@@ -195,3 +195,10 @@ class OldMaidGame(CardGame):
         count = self.hands[i].remove_matches()
         self.hands[i].shuffle()
         return count
+    
+    def find_neighbor(self, i):
+        num_hands = len(self.hands)
+        for next in range(1,num_hands):
+            neighbor = (i + next) % num_hands
+            if not self.hands[neighbor].is_empty():
+                return neighbor
