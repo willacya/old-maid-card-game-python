@@ -59,3 +59,11 @@ class Deck:
     def print_deck(self):
         for card in self.cards:
             print(card)
+            
+    # alternative to print_deck which prints one long string with an additional
+    # space and new line after each card.
+    def __str__(self):
+        s = ""
+        for i in range(len(self.cards)):
+            s = s + " " * i + str(self.cards[i]) + "\n"
+        return s
