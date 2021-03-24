@@ -148,3 +148,39 @@ class OldMaidHand(Hand):
                         .format(self.name, card, match))
                 count += 1
         return count
+
+class OldMaidGame(CardGame):
+    def play(self, names):
+        # Remove Queen of Clubs
+        self.deck.remove(Card(0,12))
+
+        # Make a hand for each player
+        self.hands = []
+        for name in names:
+            self.hands.append(OldMaidHand(name))
+
+        # Deal the cards
+        self.deck.deal(self.hands)
+        print("---------- Cards have been dealt")
+        self.print_hands()
+
+        # Remove initial matches
+        matches = self.remove_all_matches()
+        print("---------- Matches discarded, play begins")
+        self.print_hands()
+
+        # Play until all 50 cards are matched
+        turn = 0
+        num_hands = len(self.hands)
+        while matches < 25:
+            matches += self.play_one_turn(turn)
+            turn = (turn + 1) % num_hands
+
+        print("---------- Game is Over")
+        self.print_hands()
+        
+        def remove_all_matches(self):
+            count = 0
+            for hand in self.hands:
+                count += hand.remove_matches()
+            return count
