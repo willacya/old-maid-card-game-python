@@ -94,8 +94,24 @@ class Deck:
     def is_empty(self):
         return self.cards == []
     
+    # dealing the hand
+    def deal(self, hands, num_cards=999):
+        num_hands = len(hands)
+        for i in range(num_cards):
+            if self.is_empty():
+                break                    # Break if out of cards in the deck
+            card = self.pop()            # Take the top card
+            hand = hands[i % num_hands]  # Deals to each hand one by one
+            hand.add(card)     
+    
     
 class Hand(Deck):
+    
+    """
+    Inherits from Deck class. 
+    For when dealing a hand to players.
+    """
+    
     def __init__(self, name=""):
        self.cards = []
        self.name = name
@@ -104,4 +120,4 @@ class Hand(Deck):
     def add(self, card):
         self.cards.append(card)
         
-   
+    
