@@ -54,5 +54,8 @@ class Deck:
         for suit in range(4):
             for rank in range(1, 14):
                 self.cards.append(Card(suit, rank))
-                
-    
+            
+    # prints out every card currently in the deck
+    def print_deck(self):
+        for card in self.cards:
+            print(card)
