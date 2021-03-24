@@ -93,3 +93,9 @@ class Deck:
     # checks if the deck has any cards left
     def is_empty(self):
         return self.cards == []
+    
+    
+class Hand(Deck):
+    def __init__(self, name=""):
+       self.cards = []
+       self.name = name
