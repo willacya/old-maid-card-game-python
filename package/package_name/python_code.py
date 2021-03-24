@@ -99,3 +99,9 @@ class Hand(Deck):
     def __init__(self, name=""):
        self.cards = []
        self.name = name
+    
+    # adds card to Hand
+    def add(self, card):
+        self.cards.append(card)
+        
+   
