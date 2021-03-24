@@ -89,3 +89,7 @@ class Deck:
     # removes card from end of list
     def pop(self):
         return self.cards.pop()
+    
+    # checks if the deck has any cards left
+    def is_empty(self):
+        return self.cards == []
