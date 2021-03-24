@@ -76,3 +76,12 @@ class Deck:
         for i in range(num_cards):
             j = rng.randrange(i, num_cards)
             (self.cards[i], self.cards[j]) = (self.cards[j], self.cards[i])
+            
+    
+    # remove card from deck
+    def remove(self, card):
+        if card in self.cards:
+            self.cards.remove(card)
+            return True
+        else:
+            return False
