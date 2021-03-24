@@ -119,5 +119,12 @@ class Hand(Deck):
     # adds card to Hand
     def add(self, card):
         self.cards.append(card)
-        
     
+    # print function to override Deck function
+    def __str__(self):
+        s = "Hand " + self.name
+        if self.is_empty():
+            s += " is empty\n"
+        else:
+            s += " contains\n"
+        return s + Deck.__str__(self)
