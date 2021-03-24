@@ -179,8 +179,19 @@ class OldMaidGame(CardGame):
         print("---------- Game is Over")
         self.print_hands()
         
-        def remove_all_matches(self):
-            count = 0
-            for hand in self.hands:
-                count += hand.remove_matches()
+    def remove_all_matches(self):
+        count = 0
+        for hand in self.hands:
+            count += hand.remove_matches()
             return count
+        
+    def play_one_turn(self, i):
+        if self.hands[i].is_empty():
+            return 0
+        neighbor = self.find_neighbor(i)
+        picked_card = self.hands[neighbor].pop()
+        self.hands[i].add(picked_card)
+        print("Hand", self.hands[i].name, "picked", picked_card)
+        count = self.hands[i].remove_matches()
+        self.hands[i].shuffle()
+        return count
