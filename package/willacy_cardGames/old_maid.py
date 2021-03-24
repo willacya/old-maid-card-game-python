@@ -1,4 +1,4 @@
-from card_setup import Card, Hand, Deck, CardGame        
+from .card_setup import Card, Hand, Deck, CardGame        
 # inherits from Hand class        
 class OldMaidHand(Hand):
     def remove_matches(self):

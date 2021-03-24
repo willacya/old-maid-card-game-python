@@ -1,1 +1,1 @@
-from old_maid import OldMaidGame
+from .old_maid import OldMaidGame
