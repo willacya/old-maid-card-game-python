@@ -22,3 +22,22 @@ class Card:
         if self.rank < other.rank: return -1
         # Ranks are the same... it's a tie
         return 0
+    
+    
+    def __eq__(self, other): # ie. a == b
+        return self.cmp(other) == 0
+
+    def __le__(self, other): # ie. a <= b
+        return self.cmp(other) <= 0
+
+    def __ge__(self, other): # ie. a >= b
+        return self.cmp(other) >= 0
+
+    def __gt__(self, other): # ie. a > b
+        return self.cmp(other) > 0
+
+    def __lt__(self, other): # ie. a < b
+        return self.cmp(other) < 0
+
+    def __ne__(self, other): # ie. a != b
+        return self.cmp(other) != 0
