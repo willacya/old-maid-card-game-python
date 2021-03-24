@@ -128,3 +128,8 @@ class Hand(Deck):
         else:
             s += " contains\n"
         return s + Deck.__str__(self)
+    
+class CardGame:
+    def __init__(self):
+        self.deck = Deck()
+        self.deck.shuffle()
