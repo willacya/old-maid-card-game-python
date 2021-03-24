@@ -44,10 +44,10 @@ class Card:
     
 class Deck:
     
-    """"
+    """
     Populates a deck of cards by cycling through all 
     the cards in Card class.
-    """"
+    """
     
     def __init__(self):
         self.cards = []
