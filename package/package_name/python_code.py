@@ -85,3 +85,7 @@ class Deck:
             return True
         else:
             return False
+    
+    # removes card from end of list
+    def pop(self):
+        return self.cards.pop()
