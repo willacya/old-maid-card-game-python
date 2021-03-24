@@ -41,3 +41,18 @@ class Card:
 
     def __ne__(self, other): # ie. a != b
         return self.cmp(other) != 0
+    
+class Deck:
+    
+    """"
+    Populates a deck of cards by cycling through all 
+    the cards in Card class.
+    """"
+    
+    def __init__(self):
+        self.cards = []
+        for suit in range(4):
+            for rank in range(1, 14):
+                self.cards.append(Card(suit, rank))
+                
+    
